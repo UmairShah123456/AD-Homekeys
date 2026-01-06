@@ -15,6 +15,8 @@ export default function ContactPage() {
   });
 
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -23,10 +25,45 @@ export default function ContactPage() {
     viewport: { once: true, margin: "-100px" },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('https://formspree.io/f/xgovjgpd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          userType: "landlord",
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -171,11 +208,22 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white py-4 px-8 rounded-lg hover:bg-secondary transition-all text-17 font-medium flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-white py-4 px-8 rounded-lg hover:bg-secondary transition-all text-17 font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Icon icon="solar:arrow-right-linear" width="20" height="20" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  <Icon icon={isSubmitting ? "ph:spinner" : "solar:arrow-right-linear"} width="20" height="20" className={isSubmitting ? "animate-spin" : ""} />
                 </button>
+
+                {submitStatus.type && (
+                  <div className={`mt-4 p-4 rounded-lg text-center ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-800'
+                      : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800'
+                  }`}>
+                    <p className="text-16 font-medium">{submitStatus.message}</p>
+                  </div>
+                )}
 
                 <p className="text-14 text-midnight_text dark:text-white text-opacity-70 mt-4 text-center">
                   * Required fields
@@ -265,7 +313,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               {...fadeIn}
               className="text-center"
@@ -283,23 +331,6 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            <motion.div
-              {...fadeIn}
-              transition={{ delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-white dark:bg-midnight_text rounded-lg flex items-center justify-center">
-                  <Icon icon="ph:buildings" className="text-primary" width="24" height="24" />
-                </div>
-                <div className="text-left">
-                  <h4 className="mb-3 text-midnight_text dark:text-white">For Local Authorities</h4>
-                  <p className="text-16 text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
-                    Looking for reliable housing solutions? Let's discuss how we can support your accommodation needs.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
 
             <motion.div
               {...fadeIn}

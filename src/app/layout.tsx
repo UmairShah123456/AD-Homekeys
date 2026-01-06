@@ -4,8 +4,8 @@ import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata = {
-  title: "AD Homekeys - Social Housing & Emergency Accommodation Provider",
-  description: "AD Homekeys provides quality social housing and emergency accommodation across the UK, working with Local Authorities to support those who need it most.",
+  title: "AD Homekeys - Serviced Accommodation Provider",
+  description: "AD Homekeys provides quality serviced accommodation across the UK, working with Local Authorities to support those who need it most.",
 };
 
 export default function RootLayout({

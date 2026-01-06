@@ -7,8 +7,8 @@ import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import CTASection from "@/components/Home/CTASection";
 
 export const metadata: Metadata = {
-  title: "AD Homekeys - Social Housing & Emergency Accommodation Provider",
-  description: "AD Homekeys provides quality social housing and emergency accommodation across the UK, working with Local Authorities to support those who need it most.",
+  title: "AD Homekeys - Serviced Accommodation Provider",
+  description: "AD Homekeys provides quality serviced accommodation across the UK, working with Local Authorities to support those who need it most.",
 };
 
 export default function Home() {

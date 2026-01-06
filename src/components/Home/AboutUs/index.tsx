@@ -13,6 +13,18 @@ const AboutUs = () => {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-tan dark:bg-dark_b overflow-hidden">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
+        {/* Centered About Us Header */}
+        <motion.div
+          {...fadeIn}
+          className="text-center mb-16"
+        >
+          <h2 className="mb-4">About Us</h2>
+          <h3 className="text-24 text-primary mb-6 font-medium">Your Trusted Serviced Accommodation Partner</h3>
+          <p className="text-18 text-muted dark:text-white dark:text-opacity-80 max-w-3xl mx-auto leading-relaxed">
+            At AD Homekeys, we're committed to delivering exceptional serviced accommodation solutions across the UK.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-12 lg:gap-16 gap-8 items-center">
           <motion.div
             {...fadeIn}

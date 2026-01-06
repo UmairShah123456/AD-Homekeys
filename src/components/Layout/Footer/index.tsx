@@ -18,11 +18,7 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link href="/social-housing" className="text-accent text-16 hover:text-primary transition-colors">
-                  Social Housing
-                </Link>
-              </li>
+
               <li>
                 <Link href="/landlords" className="text-accent text-16 hover:text-primary transition-colors">
                   Landlords

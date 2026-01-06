@@ -90,51 +90,52 @@ const Header: React.FC = () => {
       </div>
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darkheader shadow-lg transform transition-transform duration-300 max-w-xs ${
+        className={`lg:hidden fixed top-0 right-0 h-full w-full bg-light-green shadow-lg transform transition-transform duration-300 z-50 ${
           navbarOpen ? "-translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-border dark:border-dark_border">
-          <h2 className="text-lg text-midnight_text dark:text-white">
-            Menu
-          </h2>
+        <div className="flex items-center justify-between p-6">
+          <Logo />
           <button
             onClick={() => setNavbarOpen(false)}
             aria-label="Close mobile menu"
+            className="p-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="32"
+              height="32"
               viewBox="0 0 24 24"
-              className="text-midnight_text dark:text-white"
+              className="text-forest"
             >
               <path
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col items-start p-4">
-          {headerData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
-          ))}
-          <div className="mt-6 w-full">
-            <Link
-              href="/contact"
-              className="flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors w-full gap-2"
-              onClick={() => {
-                setNavbarOpen(false);
-              }}
-            >
-              Contact Us
-              <Icon icon="solar:arrow-right-linear" width="20" height="20" />
-            </Link>
+        <nav className="flex flex-col items-center justify-center h-[calc(100%-100px)] px-6 text-center">
+          <div className="flex flex-col items-center space-y-10 w-full">
+            {headerData.map((item, index) => (
+              <MobileHeaderLink key={index} item={item} />
+            ))}
+            <div className="mt-8 w-full max-w-xs">
+              <Link
+                href="/contact"
+                className="flex items-center justify-center bg-forest text-white px-8 py-4 rounded-lg hover:bg-primary transition-colors w-full gap-2 text-18 font-normal"
+                onClick={() => {
+                  setNavbarOpen(false);
+                }}
+              >
+                Contact Us
+                <Icon icon="solar:arrow-right-linear" width="24" height="24" />
+              </Link>
+            </div>
           </div>
         </nav>
       </div>

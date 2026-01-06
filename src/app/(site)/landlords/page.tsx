@@ -58,6 +58,122 @@ export default function LandlordsPage() {
         </div>
       </section>
 
+      {/* Our Options Section */}
+      <section className="py-24 bg-tan dark:bg-dark_b">
+        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <span className="text-14 uppercase tracking-wider text-primary mb-4 block">Partnership Options</span>
+            <h2 className="mb-4">Choose Your Partnership Model</h2>
+            <p className="text-18 text-muted dark:text-white dark:text-opacity-70 max-w-3xl mx-auto">
+              We offer two flexible partnership options designed to maximize your property's potential and provide the level of involvement that suits you best.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Property Management Option */}
+            <motion.div
+              {...fadeIn}
+              transition={{ delay: 0.1 }}
+              className="bg-white dark:bg-midnight_text p-8 lg:p-10 rounded-3xl relative"
+            >
+              <div className="mb-6">
+                <Icon icon="ph:building-office" className="text-primary mb-4" width="48" height="48" />
+                <h3 className="mb-4 text-midnight_text dark:text-white">Property Management</h3>
+                <p className="text-16 text-muted dark:text-white dark:text-opacity-70 leading-relaxed mb-6">
+                  We handle all aspects of property management while you receive market-rate rental income. Perfect for landlords who want to focus on ownership without day-to-day operations.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-primary flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-midnight_text dark:text-white">Market-rate rental income</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-primary flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-midnight_text dark:text-white">Full maintenance & repairs</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-primary flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-midnight_text dark:text-white">Tenant screening & placement</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-primary flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-midnight_text dark:text-white">24/7 property support</span>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-border dark:border-dark_border">
+                <p className="text-16 text-muted dark:text-white dark:text-opacity-70">
+                  <strong>Income Potential:</strong> Standard market rates with potential for voids
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Guaranteed Rent Option - Most Popular */}
+            <motion.div
+              {...fadeIn}
+              transition={{ delay: 0.2 }}
+              className="bg-primary p-8 lg:p-10 rounded-3xl text-white relative overflow-hidden"
+            >
+              {/* Popular Tag */}
+              <div className="absolute top-6 right-6 bg-white text-primary px-4 py-2 rounded-full text-14 font-semibold flex items-center gap-2">
+                <Icon icon="ph:star-fill" width="16" height="16" />
+                Most Popular
+              </div>
+
+              <div className="mb-6">
+                <Icon icon="ph:currency-gbp" className="text-white mb-4" width="48" height="48" />
+                <h3 className="mb-4 text-white">Guaranteed Rent</h3>
+                <p className="text-16 text-white text-opacity-90 leading-relaxed mb-6">
+                  Eliminate rental voids and enjoy guaranteed monthly payments. We assume all rental risk while providing premium returns through our serviced accommodation network.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-white flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-white">100% guaranteed monthly payments</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-white flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-white">No voids or bad debt risk</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-white flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-white">Premium returns above market rates</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon icon="ph:check-circle" className="text-white flex-shrink-0" width="20" height="20" />
+                  <span className="text-16 text-white">Complete financial security</span>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white border-opacity-20">
+                <p className="text-16 text-white text-opacity-90">
+                  <strong>Income Potential:</strong> Guaranteed payments with premium returns
+                </p>
+              </div>
+
+              <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-white rounded-full opacity-5"></div>
+            </motion.div>
+          </div>
+
+          <motion.div {...fadeIn} transition={{ delay: 0.3 }} className="text-center mt-12">
+            <p className="text-18 text-muted dark:text-white dark:text-opacity-70 mb-6">
+              Not sure which option is right for you? Contact us for a free consultation and personalized recommendation.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-primary text-white py-4 px-8 rounded-lg hover:bg-secondary transition-all text-17 font-medium"
+            >
+              Get Your Free Consultation
+              <Icon icon="solar:alt-arrow-right-linear" width="18" height="18" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Key Benefits - Asymmetric Grid */}
       <section className="py-24 bg-white dark:bg-darkmode">
         <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
@@ -81,9 +197,9 @@ export default function LandlordsPage() {
                   Earn significantly more than traditional buy-to-let with guaranteed monthly income. Professional serviced accommodation management that maximizes your property's earning potential.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">Higher Returns</span>
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">Guaranteed Income</span>
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">No Voids</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">Higher Returns</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">Guaranteed Income</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">No Voids</span>
                 </div>
               </div>
               <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-primary rounded-full opacity-10"></div>
