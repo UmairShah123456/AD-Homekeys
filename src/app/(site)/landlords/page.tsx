@@ -32,10 +32,10 @@ export default function LandlordsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="text-14 uppercase tracking-wider text-white mb-4 block">For Landlords</span>
-              <h1 className="mb-6 text-white">Partner With AD Homekeys</h1>
+              <span className="text-14 uppercase tracking-wider text-white mb-4 block">For Property Owners</span>
+              <h1 className="mb-6 text-white">Transform Your Property Into a Profitable Investment</h1>
               <p className="text-19 text-white text-opacity-90 leading-relaxed mb-8">
-                Join our network of landlords providing quality accommodation to those who need it most. Enjoy guaranteed rent, professional management, and the satisfaction of making a social impact.
+                Join our network of property owners earning premium returns through professional serviced accommodation management. Enjoy guaranteed income, full property management, and industry-leading returns.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -66,7 +66,7 @@ export default function LandlordsPage() {
               <span className="text-14 uppercase tracking-wider text-primary mb-4 block">Partnership Benefits</span>
               <h2 className="mb-6">Why Partner With Us</h2>
               <p className="text-18 text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
-                We offer landlords a hassle-free, rewarding partnership that combines financial security with social responsibility.
+                We offer property owners a hassle-free, rewarding partnership that maximizes returns through professional serviced accommodation management.
               </p>
             </motion.div>
           </div>
@@ -76,14 +76,14 @@ export default function LandlordsPage() {
             <motion.div {...fadeIn} className="lg:col-span-7 col-span-12 bg-forest p-10 rounded-3xl text-white relative overflow-hidden">
               <div className="relative z-10">
                 <Icon icon="ph:currency-gbp" className="text-primary mb-6" width="56" height="56" />
-                <h3 className="mb-4 text-white">Guaranteed Rental Income</h3>
+                <h3 className="mb-4 text-white">Premium Returns</h3>
                 <p className="text-18 text-white text-opacity-90 mb-6 leading-relaxed max-w-xl">
-                  Receive consistent, reliable rental payments directly from us, regardless of occupancy. No more chasing tenants for rent or dealing with payment delays.
+                  Earn significantly more than traditional buy-to-let with guaranteed monthly income. Professional serviced accommodation management that maximizes your property's earning potential.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">Consistent Income</span>
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">Direct Payments</span>
-                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-forest font-medium">No Delays</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">Higher Returns</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">Guaranteed Income</span>
+                  <span className="px-4 py-2 bg-white bg-opacity-20 rounded-lg text-14 text-white font-medium">No Voids</span>
                 </div>
               </div>
               <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-primary rounded-full opacity-10"></div>
@@ -93,16 +93,16 @@ export default function LandlordsPage() {
             <motion.div {...fadeIn} transition={{ delay: 0.1 }} className="lg:col-span-5 col-span-12 space-y-6">
               <div className="bg-tan p-8 rounded-3xl">
                 <Icon icon="ph:wrench" className="text-primary mb-4" width="40" height="40" />
-                <h4 className="mb-3 text-midnight_text dark:text-white">Professional Management</h4>
+                <h4 className="mb-3 text-midnight_text dark:text-white">Complete Management</h4>
                 <p className="text-16 text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
-                  We handle all day-to-day management including tenant relations, maintenance, and inspections.
+                  Full end-to-end management including guest bookings, property maintenance, cleaning, and 24/7 support.
                 </p>
               </div>
               <div className="bg-light-green p-8 rounded-3xl">
-                <Icon icon="ph:heart" className="text-white mb-4" width="40" height="40" />
-                <h4 className="mb-3 text-white">Social Impact</h4>
+                <Icon icon="ph:chart-line-up" className="text-white mb-4" width="40" height="40" />
+                <h4 className="mb-3 text-white">Revenue Optimization</h4>
                 <p className="text-16 text-white text-opacity-90 leading-relaxed">
-                  Make a meaningful contribution by providing safe housing for vulnerable families.
+                  Dynamic pricing and strategic marketing to ensure maximum occupancy and revenue.
                 </p>
               </div>
             </motion.div>
@@ -203,15 +203,8 @@ export default function LandlordsPage() {
       {/* Testimonial Section */}
       <section className="py-24 bg-white dark:bg-darkmode">
         <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-          <div className="grid grid-cols-12 gap-16 items-center">
-            <motion.div {...fadeIn} className="lg:col-span-5 col-span-12">
-              <div className="w-full h-[450px] bg-light-green rounded-3xl flex items-center justify-center relative">
-                <span className="text-white text-18">Landlord Partnership Image</span>
-                <div className="absolute -top-8 -right-8 w-32 h-32 bg-tan rounded-3xl -z-10 hidden lg:block"></div>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="lg:col-span-7 col-span-12">
+          <div className="max-w-4xl mx-auto">
+            <motion.div {...fadeIn}>
               <span className="text-14 uppercase tracking-wider text-primary mb-4 block">Landlord Feedback</span>
               <h2 className="mb-8">Trusted by Property Owners Across the UK</h2>
 
@@ -235,18 +228,18 @@ export default function LandlordsPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-6">
-                <div>
-                  <div className="text-32 text-primary mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>100%</div>
-                  <p className="text-14 text-muted dark:text-white dark:text-opacity-70">Satisfaction Rate</p>
+              <div className="grid grid-cols-3 gap-4 sm:gap-8">
+                <div className="text-center">
+                  <div className="text-32 sm:text-40 md:text-48 text-primary mb-2 sm:mb-3" style={{ fontFamily: 'var(--font-playfair)' }}>100%</div>
+                  <p className="text-13 sm:text-14 md:text-16 text-muted dark:text-white dark:text-opacity-70">Satisfaction Rate</p>
                 </div>
-                <div>
-                  <div className="text-32 text-primary mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>£0</div>
-                  <p className="text-14 text-muted dark:text-white dark:text-opacity-70">Setup Fees</p>
+                <div className="text-center">
+                  <div className="text-32 sm:text-40 md:text-48 text-primary mb-2 sm:mb-3" style={{ fontFamily: 'var(--font-playfair)' }}>£0</div>
+                  <p className="text-13 sm:text-14 md:text-16 text-muted dark:text-white dark:text-opacity-70">Setup Fees</p>
                 </div>
-                <div>
-                  <div className="text-32 text-primary mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>24/7</div>
-                  <p className="text-14 text-muted dark:text-white dark:text-opacity-70">Support</p>
+                <div className="text-center">
+                  <div className="text-32 sm:text-40 md:text-48 text-primary mb-2 sm:mb-3" style={{ fontFamily: 'var(--font-playfair)' }}>24/7</div>
+                  <p className="text-13 sm:text-14 md:text-16 text-muted dark:text-white dark:text-opacity-70">Support</p>
                 </div>
               </div>
             </motion.div>
@@ -269,7 +262,7 @@ export default function LandlordsPage() {
             {[
               {
                 question: "What is the minimum tenancy length?",
-                answer: "We typically work with flexible tenancy agreements ranging from 6 months to several years, depending on your preferences and Local Authority requirements."
+                answer: "We typically work with flexible tenancy agreements ranging from 6 months to several years, depending on your preferences."
               },
               {
                 question: "How do you determine rental rates?",

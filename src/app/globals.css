@@ -53,6 +53,8 @@
   --text-13--line-height: 1.2;
   --text-14: 0.875rem;
   --text-14--line-height: 1.2;
+  --text-15: 0.9375rem;
+  --text-15--line-height: 1.2;
   --text-16: 1rem;
   --text-16--line-height: 1.2;
   --text-18: 1.125rem;
@@ -69,6 +71,8 @@
   --text-25--line-height: 1.2;
   --text-28: 1.75rem;
   --text-28--line-height: 1.2;
+  --text-32: 2rem;
+  --text-32--line-height: 1.2;
   --text-35: 2.1875rem;
   --text-35--line-height: 1.2;
   --text-40: 2.5rem;

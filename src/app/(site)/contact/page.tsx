@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ export default function ContactPage() {
           >
             <h1 className="mb-6">Get In Touch</h1>
             <p className="text-19 text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
-              Whether you're a landlord interested in partnering with us, a Local Authority seeking housing solutions, or have general inquiries, we're here to help.
+              Whether you're a landlord interested in partnering with us or have general inquiries, we're here to help.
             </p>
           </motion.div>
         </div>
@@ -83,7 +84,6 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 bg-white dark:bg-midnight_text border border-border dark:border-dark_border rounded-lg text-midnight_text dark:text-white focus:outline-none focus:border-primary"
                   >
                     <option value="landlord">Landlord</option>
-                    <option value="local-authority">Local Authority</option>
                     <option value="general">General Inquiry</option>
                   </select>
                 </div>
@@ -191,8 +191,8 @@ export default function ContactPage() {
             >
               <div className="mb-6">
                 <h2 className="mb-6 text-white">Find Us</h2>
-                <div className="bg-tan dark:bg-dark_b p-6 rounded-2xl mb-6">
-                  <div className="flex items-start gap-3 mb-4">
+                <div className="bg-tan dark:bg-dark_b p-6 rounded-2xl mb-6 space-y-6">
+                  <div className="flex items-start gap-3">
                     <Icon icon="ph:map-pin" className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="text-midnight_text dark:text-white font-medium mb-1">Our Office</h4>
@@ -202,6 +202,24 @@ export default function ContactPage() {
                         EC1V 2NX<br />
                         United Kingdom
                       </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Icon icon="ph:phone" className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-midnight_text dark:text-white font-medium mb-1">Phone</h4>
+                      <Link href="tel:+443301338456" className="text-16 text-midnight_text dark:text-white text-opacity-80 hover:text-primary transition-colors">
+                        +44 330 133 8456
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Icon icon="ph:envelope" className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-midnight_text dark:text-white font-medium mb-1">Email</h4>
+                      <Link href="mailto:daniel@adhomekeys.com" className="text-16 text-midnight_text dark:text-white text-opacity-80 hover:text-primary transition-colors">
+                        daniel@adhomekeys.com
+                      </Link>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -243,7 +261,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h2 className="mb-6">How Can We Help?</h2>
             <p className="text-18 text-muted dark:text-white dark:text-opacity-70 max-w-3xl mx-auto">
-              Whether you're a landlord, Local Authority, or have general inquiries, we're here to support your housing needs.
+              Whether you're a landlord or have general inquiries, we're here to support your housing needs.
             </p>
           </div>
 

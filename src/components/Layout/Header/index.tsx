@@ -47,21 +47,32 @@ const Header: React.FC = () => {
     }
   }, [navbarOpen]);
 
+  const isHomePage = pathUrl === "/";
+  const isTransparent = isHomePage && !sticky;
+
   return (
     <header
-      className="fixed h-24 top-0 py-1 z-50 w-full bg-white transition-all"
+      className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
+        isTransparent ? "bg-transparent" : "bg-white shadow-sm"
+      }`}
     >
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex justify-between lg:items-center xl:gap-16 lg:gap-8 px-4 py-6">
-        <Logo />
-        <nav className="hidden lg:flex items-center justify-center space-x-10 text-17 text-midnight_text font-playfair flex-1">
+        <Logo isTransparent={isTransparent} />
+        <nav className={`hidden lg:flex items-center justify-center space-x-10 text-17 font-playfair flex-1 ${
+          isTransparent ? "text-white" : "text-midnight_text"
+        }`}>
           {headerData.map((item, index) => (
-            <HeaderLink key={index} item={item} />
+            <HeaderLink key={index} item={item} isTransparent={isTransparent} />
           ))}
         </nav>
         <div className="hidden lg:flex items-center">
           <Link
             href="/contact"
-            className="flex items-center bg-primary text-white px-6 py-3 gap-2 rounded-lg text-16 font-medium hover:bg-secondary transition-colors"
+            className={`flex items-center px-6 py-3 gap-2 rounded-lg text-16 font-medium transition-colors ${
+              isTransparent
+                ? "bg-white text-[#296f53] hover:bg-white/90"
+                : "bg-primary text-white hover:bg-secondary"
+            }`}
           >
             Contact Us
             <Icon icon="solar:arrow-right-linear" width="20" height="20" />
@@ -72,9 +83,9 @@ const Header: React.FC = () => {
           className="block lg:hidden p-2 rounded-lg"
           aria-label="Toggle mobile menu"
         >
-          <span className="block w-6 h-0.5 bg-forest dark:bg-white"></span>
-          <span className="block w-6 h-0.5 bg-forest dark:bg-white mt-1.5"></span>
-          <span className="block w-6 h-0.5 bg-forest dark:bg-white mt-1.5"></span>
+          <span className={`block w-6 h-0.5 ${isTransparent ? "bg-white" : "bg-forest dark:bg-white"}`}></span>
+          <span className={`block w-6 h-0.5 mt-1.5 ${isTransparent ? "bg-white" : "bg-forest dark:bg-white"}`}></span>
+          <span className={`block w-6 h-0.5 mt-1.5 ${isTransparent ? "bg-white" : "bg-forest dark:bg-white"}`}></span>
         </button>
       </div>
       <div

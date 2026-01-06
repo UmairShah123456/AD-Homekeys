@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
 
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const HeaderLink: React.FC<{ item: HeaderItem; isTransparent?: boolean }> = ({ item, isTransparent = false }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const path = usePathname();
   const handleMouseEnter = () => {
@@ -25,10 +25,14 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     >
       <Link
         href={item.href}
-        className={`text-18 flex font-normal font-playfair items-center hover:text-primary dark:hover:text-primary ${
+        className={`text-18 flex font-normal font-playfair items-center relative ${
           path === item.href
-            ? "text-primary hover:text-grey"
-            : "text-midnight_text dark:text-white "
+            ? isTransparent
+              ? "text-white after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white after:content-['']"
+              : "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:content-['']"
+            : isTransparent
+            ? "text-white hover:text-white/80"
+            : "text-midnight_text dark:text-white hover:text-primary dark:hover:text-primary"
         }`}
       >
         {item.label}
