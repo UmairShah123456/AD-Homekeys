@@ -1,0 +1,6 @@
+{
+  "/(site)/social-housing/page": "app/(site)/social-housing/page.js",
+  "/page": "app/page.js",
+  "/(site)/contact/page": "app/(site)/contact/page.js",
+  "/(site)/landlords/page": "app/(site)/landlords/page.js"
+}

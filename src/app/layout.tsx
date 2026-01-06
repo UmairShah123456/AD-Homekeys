@@ -1,0 +1,26 @@
+import "./globals.css";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
+export const metadata = {
+  title: "AD Homekeys - Social Housing & Emergency Accommodation Provider",
+  description: "AD Homekeys provides quality social housing and emergency accommodation across the UK, working with Local Authorities to support those who need it most.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>
+        <Header />
+        {children}
+        <Footer />
+        <ScrollToTop />
+      </body>
+    </html>
+  );
+}
