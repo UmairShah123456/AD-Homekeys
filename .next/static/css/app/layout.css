@@ -1534,6 +1534,9 @@
   .text-start {
     text-align: start;
   }
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
