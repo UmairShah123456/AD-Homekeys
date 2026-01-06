@@ -21,7 +21,7 @@ const Hero = () => {
             className="col-span-1 px-4 sm:px-6 sm:py-16 md:px-12 xl:px-16 2xl:px-24 flex items-center w-full md:h-full"
           >
             <div className="w-full max-w-full h-full flex flex-col justify-center lg:-mt-40">
-              <span className="text-sm uppercase tracking-wider text-white/80 mb-4 block">
+              <span className="hidden md:block text-sm uppercase tracking-wider text-white/80 mb-4">
                 Premium Serviced Accommodation
               </span>
 

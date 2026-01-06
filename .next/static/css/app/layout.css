@@ -1439,6 +1439,11 @@
       margin-bottom: calc(var(--spacing) * 0);
     }
   }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
   .md\:h-\[400px\] {
     @media (width >= 48rem) {
       height: 400px;

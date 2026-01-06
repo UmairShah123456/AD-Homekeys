@@ -11,20 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/(site)/contact/page": [
+    "/(site)/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(site)/contact/page.js"
+      "static/chunks/app/(site)/about/page.js"
     ],
     "/(site)/landlords/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(site)/landlords/page.js"
-    ],
-    "/(site)/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(site)/about/page.js"
     ]
   }
 }

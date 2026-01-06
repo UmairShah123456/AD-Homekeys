@@ -122,7 +122,7 @@ const Header: React.FC = () => {
         <nav className="flex flex-col items-center justify-center h-[calc(100%-100px)] px-6 text-center">
           <div className="flex flex-col items-center space-y-10 w-full">
             {headerData.map((item, index) => (
-              <MobileHeaderLink key={index} item={item} />
+              <MobileHeaderLink key={index} item={item} onNavigate={() => setNavbarOpen(false)} />
             ))}
             <div className="mt-8 w-full max-w-xs">
               <Link
